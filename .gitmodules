@@ -4,3 +4,6 @@
 [submodule "mono-basic"]
 	path = mono-basic
 	url = ../mono-basic.git
+[submodule "FAudio"]
+	path = FAudio
+	url = git://github.com/FNA-XNA/FAudio.git
