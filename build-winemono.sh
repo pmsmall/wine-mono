@@ -125,6 +125,14 @@ cross_build_mono ()
     fi
     make $MAKEOPTS || exit 1
     cp "$BUILDDIR/build-cross-$ARCH/FAudio/FAudio.dll" "$BUILDDIR/image/bin/FAudio-$ARCH.dll" || exit 1
+	
+    if test ! -d "$BUILDDIR/build-cross-$ARCH/Theorafile"; then
+        mkdir "$BUILDDIR/build-cross-$ARCH/Theorafile"
+    fi
+
+	cd "$BUILDDIR/build-cross-$ARCH/Theorafile"
+	make $MAKEOPTS "CC=${MINGW}-gcc" -f "$SRCDIR/Theorafile/Makefile" || exit 1
+    cp "$BUILDDIR/build-cross-$ARCH/Theorafile/libtheorafile.dll" "$BUILDDIR/image/bin/libtheorafile-$ARCH.dll" || exit 1
 }
 
 build_cli ()

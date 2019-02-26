@@ -7,3 +7,6 @@
 [submodule "FAudio"]
 	path = FAudio
 	url = git://github.com/FNA-XNA/FAudio.git
+[submodule "Theorafile"]
+	path = Theorafile
+	url = git://github.com/FNA-XNA/Theorafile.git
